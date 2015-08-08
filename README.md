@@ -31,7 +31,7 @@ StatsD + Carbon-Cache + Graphite + PostgreSQL + Dashing
 | Host              | Container                  | Notes                           |
 | ----------------- | -------------------------- | ------------------------------- |
 | ./data/pgdata     | /var/lib/postgresql        | PostgreSQL data storage         |
-| DOCKER ASSIGNED   | /var/lib/graphite          | Graphite Storage                |
+| ./data/graphite   | /var/lib/graphite          | Graphite Storage                |
 
 
 # Quick Start
