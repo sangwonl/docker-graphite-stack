@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Starting StatsD..."
+cd statsd && node stats.js /etc/statsd/localConfig.js

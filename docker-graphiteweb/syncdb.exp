@@ -1,0 +1,26 @@
+#!/usr/bin/env expect
+
+set timeout -1
+spawn graphite-manage syncdb
+
+expect "Would you like to create one now" {
+  send "yes\r"
+}
+
+expect "Username *:" {
+  send "admin\r"
+}
+
+expect "Email address:" {
+  send "gamzabaw@gmail.com\r"
+}
+
+expect "Password:" {
+  send "admin\r"
+}
+
+expect "Password *:" {
+  send "admin\r"
+}
+
+expect "Superuser created successfully"

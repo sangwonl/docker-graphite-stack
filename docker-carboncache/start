@@ -1,0 +1,9 @@
+#!/bin/bash
+
+NAME=carbon-cache
+DAEMON=/usr/bin/$NAME
+PIDFILE=/var/run/$NAME.pid
+DAEMON_ARGS="--config=/etc/carbon/carbon.conf --pidfile=$PIDFILE --logdir=/var/log/carbon/ start"
+
+echo "Starting Carbon-Cache..."
+$DAEMON $DAEMON_ARGS && tail -f /var/log/carbon/console.log
