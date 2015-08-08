@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Starting Dashing..."
+cd dashboard && dashing start

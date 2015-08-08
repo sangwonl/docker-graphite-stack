@@ -1,4 +1,4 @@
-all: postgresql graphiteweb carboncache statsd
+all: postgresql graphiteweb carboncache statsd dashing
 
 postgresql:
 	docker build -t postgresql -f ./docker-postgresql/Dockerfile --rm ./docker-postgresql
@@ -12,6 +12,9 @@ carboncache:
 statsd:
 	docker build -t statsd -f ./docker-statsd/Dockerfile --rm ./docker-statsd
 
+dashing:
+	docker build -t dashing -f ./docker-dashing/Dockerfile --rm ./docker-dashing
+
 run:
 	mkdir -p $(HOME)/data/pgdata $(HOME)/data/graphite
 	docker run -d --name postgresql -v $(HOME)/data/pgdata:/var/lib/postgresql -e 'DB_NAME=graphite' -e 'DB_USER=graphite' -e 'DB_PASS=graphite' postgresql
@@ -21,3 +24,7 @@ run:
 	sleep 1
 	docker run -d --name carboncache --volumes-from graphitedata -p 2003:2003 carboncache
 	docker run -d --name statsd --link carboncache:carboncache -p 8125:8125/udp statsd
+	docker run -d --name dashing --link graphiteweb:graphiteweb -p 3030:3030 dashing
+
+rm:
+	docker rm -f `docker ps -a -q`
