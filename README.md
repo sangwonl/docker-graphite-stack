@@ -5,7 +5,7 @@ A set of dockerfiles for simple stats monitoring by using followsing stacks.
 StatsD + Carbon-Cache + Graphite + PostgreSQL + Dashing
 
 # Docker Containers Structure
-![Docker Structure](https://github.com/sangwonl/docker-stats-monitoring/master/overview.png "Docker Structure")
+![Docker Structure](https://github.com/sangwonl/docker-stats-monitoring/blob/master/overview.png "Docker Structure")
 
 # Includes the following components
 
