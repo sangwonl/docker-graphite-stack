@@ -44,6 +44,7 @@ If you use OSX, it's recommended that you use vagrant for linux environment.
 vagrant up
 vagrant plugin install vagrant-vbguest
 vagrant reload
+vagrant provision
 vagrant ssh
 
 cd /vagrant
