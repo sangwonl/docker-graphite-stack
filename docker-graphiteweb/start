@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Synchronizing Databasel..."
+echo "Synchronizing Database..."
 ./syncdb.exp 2>/dev/null
 
 echo "Starting Graphite Webserver..."

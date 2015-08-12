@@ -36,7 +36,6 @@ StatsD + Carbon-Cache + Graphite + PostgreSQL + Dashing + Grafana
 | ./data/graphite     | /var/lib/graphite          | Graphite Data Storage           |
 | ./data/grafana/lib  | /var/lib/grafana           | Grafana Data Storage            |
 | ./data/grafana/log  | /var/log/grafana           | Grafana Log                     |
-| ./data/grafana/etc  | /etc/grafana               | Grafana Config                  |
 
 
 # Quick Start
